@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+var star = ['小沈阳', '尼古拉斯赵四', '宋小宝', '刘能', '小沈阳', '小岳岳', '老郭', '于大爷'];
+// 每个成员是否包含'小'字
+var result = star.some(function (value, index, arr) {
+	// 返回值是判断条件
+	return 123
+})
+/**
+ * 实现some方法
+ * @arr 	原数组
+ * @fn 		回调函数
+ * return 	布尔值
+ ***/ 
+function some (arr, fn) {
+	// 遍历数组
+	for (var i = 0; i < arr.length; i++) {
+		// 根据回调函数执行结果来判断
+		if (fn(arr[i], i, arr)) {
+			return true
+		}
+	}
+	// 如果所有成员都不满足
+	return false;
+}
+var result  = some(star, function (value, index, arr) {
+	// return value.indexOf('小') >= 0
+	return value.indexOf('中') >= 0
+})
+console.log(result)
+</script>
+</body>
+</html>
